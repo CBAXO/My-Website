@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROVER STUDIO</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #080f13;
+            overflow: hidden;
+            min-height: 100vh;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* تأثيرات الماوس الجديدة */
+        .mouse-trail {
+            position: fixed;
+            width: 15px;
+            height: 15px;
+            border: 2px solid #7f5af0;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: mousePulse 0.5s infinite;
+            mix-blend-mode: screen;
+        }
+
+        @keyframes mousePulse {
+            0% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(2); opacity: 0; }
+        }
+
+        .container {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 5em;
+            color: #fff;
+            text-shadow: 0 0 30px #7f5af0;
+            margin-bottom: 100px;
+            animation: 0
+        }
+
+        .card-container {
+            display: flex;
+            gap: 40px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .card {
+            width: 320px;
+            height: 420px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 15px;
+            backdrop-filter: blur(15px);
+            border: 1px solid #7f5af0;
+            transition: 0.5s;
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-20px);
+            box-shadow: 0 0 40px #7f5af0aa;
+        }
+
+        .card-content {
+            padding: 25px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .card-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #7f5af0;
+            margin-bottom: 25px;
+            box-shadow: 0 0 25px #7f5af0;
+        }
+
+        .galaxy {
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            animation: galaxy-spin 120s linear infinite;
+        }
+
+        .planet {
+            position: fixed;
+            border-radius: 50%;
+            filter: drop-shadow(0 0 20px rgba(255,255,255,0.3));
+            animation: planet-orbit 80s linear infinite;
+        }
+
+        .planet::after {
+            content: '';
+            position: absolute;
+            width: 120%;
+            height: 10px;
+            background: rgba(255,255,255,0.1);
+            transform: rotate(-45deg);
+            filter: blur(5px);
+        }
+
+        .star {
+            position: fixed;
+            width: 2px;
+            height: 2px;
+            background: #fff;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes title-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes galaxy-spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes planet-orbit {
+            from { transform: rotate(0deg) translateX(300px) rotate(0deg); }
+            to { transform: rotate(360deg) translateX(300px) rotate(-360deg); }
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes mousePulse {
+            0% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(2); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- المجرات -->
+    <div class="galaxy" style="background: #7f5af0; top: 20%; left: 10%;"></div>
+    <div class="galaxy" style="background: #2cb67d; top: 70%; right: 15%;"></div>
+
+    <!-- النجوم -->
+    <div class="star" style="top: 15%; left: 20%;"></div>
+    <div class="star" style="top: 80%; right: 30%; animation-delay: 1s;"></div>
+
+    <div class="container">
+        <h1 class="hero-title">ROVER STUDIO</h1>
+        
+        <div class="card-container">
+            <a href="https://discord.gg/g6b7ZZrFqa" class="card" target="_blank">
+                <div class="card-content">
+                    <img src="https://a.top4top.io/p_33287jo2o1.png" class="card-img" alt="Discord">
+                    <h2>مجتمع الديسكورد</h2>
+                    <p>انضم إلى ورشة العمل الإبداعية</p>
+                </div>
+            </a>
+            
+            <a href="https://sites.google.com/view/rover-studio/home" class="card" target="_blank">
+                <div class="card-content">
+                    <img src="https://f.top4top.io/p_3328bkhbx1.png" class="card-img" alt="Website">
+                    <h2>الموقع الرسمي</h2>
+                    <p>استكشف عالمنا الرقمي</p>
+                </div>
+            </a>
+            
+            <a href="https://www.youtube.com/@C.B.A.X.O" class="card" target="_blank">
+                <div class="card-content">
+                    <img src="https://i.top4top.io/p_33283esat1.png" class="card-img" alt="YouTube">
+                    <h2>قناة اليوتيوب</h2>
+                    <p>شاهد إبداعاتنا المرئية</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- الكواكب -->
+    <div class="planet" style="
+        width: 120px;
+        height: 120px;
+        background: radial-gradient(circle at 30% 30%, #2cb67d, #004643);
+        top: 20%;
+        right: 15%;
+        animation-delay: -20s;
+    "></div>
+
+    <div class="planet" style="
+        width: 80px;
+        height: 80px;
+        background: radial-gradient(circle at 30% 30%, #7f5af0, #16161a);
+        bottom: 30%;
+        left: 10%;
+    "></div>
+
+    <script>
+        // تأثير الماوس
+        document.addEventListener('mousemove', (e) => {
+            const trail = document.createElement('div');
+            trail.className = 'mouse-trail';
+            trail.style.left = e.clientX - 7 + 'px';
+            trail.style.top = e.clientY - 7 + 'px';
+            document.body.appendChild(trail);
+            
+            setTimeout(() => {
+                trail.remove();
+            }, 500);
+        });
+
+        // إنشاء النجوم
+        function createStars() {
+            const starsContainer = document.createElement('div');
+            for(let i = 0; i < 200; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.top = Math.random() * 100 + 'vh';
+                star.style.left = Math.random() * 100 + 'vw';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                starsContainer.appendChild(star);
+            }
+            document.body.appendChild(starsContainer);
+        }
+        createStars();
+    </script>
+</body>
+</html>
