@@ -5,21 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>ROVER STUDIO</title>
     <link rel="icon" type="image/x-icon" href="https://f.top4top.io/p_3330quge21.png">
+    
+    <!-- إضافة خط Tajawal من Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lalezar:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
+	
+	* {
+    text-decoration: none; /* إزالة التحديد من جميع العناصر */
+		}
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif; /* تطبيق الخط المخصص */
         }
 
         body {
             background: #080f13;
             overflow-x: hidden;
             min-height: 100vh;
-            font-family: 'Arial', sans-serif;
         }
 
-        /* تأثيرات الماوس للجميع */
+        /* تأثيرات الماوس */
         .mouse-trail {
             position: fixed;
             width: 10px;
@@ -42,16 +50,16 @@
             padding: 100px 20px; /* تقليل padding للهواتف */
             display: flex;
             flex-direction: column;
-            justify-content: flex-start; /* العنوان في الأعلى */
+            justify-content: flex-start;
             align-items: center;
             z-index: 2;
         }
 
         .hero-title {
-            font-size: 3em; /* حجم مناسب */
+            font-size: 3em;
             color: #fff;
             text-shadow: 0 0 30px #7f5af0;
-            margin: 40px 0; /* تباعد مناسب */
+            margin: 40px 0;
             text-align: center;
             animation: title-float 4s ease-in-out infinite;
         }
@@ -67,7 +75,7 @@
         }
 
         .card {
-            width: calc(25% - 20px); /* توزيع متساوي لـ 4 بطاقات */
+            width: calc(25% - 20px); /* 4 بطاقات في الصف */
             max-width: 300px;
             height: auto;
             min-height: 350px;
@@ -106,7 +114,19 @@
             box-shadow: 0 0 25px #7f5af0;
         }
 
-        /* تحسين العناصر الكونية للجميع */
+        /* تعديل ألوان النصوص في البطاقات */
+        .card h2 {
+            color: #7f5af0; /* لون العنوان */
+            margin-bottom: 10px;
+            font-size: 1.6em;
+        }
+
+        .card p {
+            color: #CACED4; /* لون النص الثانوي */
+            font-size: 0.9em;
+        }
+
+        /* تحسين العناصر الكونية */
         .galaxy {
             width: 150px;
             height: 150px;
@@ -239,7 +259,7 @@
             <!-- البطاقة الجديدة -->
             <a href="https://www.tiktok.com/@rover.studio?_t=8si03J70nti&_r=1" class="card" target="_blank">
                 <div class="card-content">
-                    <img src="https://h.top4top.io/p_33307ssa11.png" class="card-img" alt="اسم_الخدمة">
+                    <img src="https://h.top4top.io/p_33307ssa11.png" class="card-img" alt="TikTok">
                     <h2>حساب التيك توك</h2>
                     <p>استكشف عالمنا الخاص</p>
                 </div>
@@ -265,7 +285,7 @@
     "></div>
 
     <script>
-        // تأثير الماوس للجميع
+        // تأثير الماوس
         document.addEventListener('mousemove', (e) => {
             const trail = document.createElement('div');
             trail.className = 'mouse-trail';
