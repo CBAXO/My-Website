@@ -39,7 +39,7 @@
         .container {
             position: relative;
             min-height: 100vh;
-            padding: 200px;
+            padding: 100px 20px; /* تقليل padding للهواتف */
             display: flex;
             flex-direction: column;
             justify-content: flex-start; /* العنوان في الأعلى */
@@ -143,8 +143,12 @@
 
         /* تعديلات الهواتف */
         @media (max-width: 768px) {
+            .container {
+                padding: 50px 10px; /* تقليل padding أكثر للهواتف */
+            }
+
             .hero-title {
-                font-size: 2.5em; /* حجم أصغر للهواتف */
+                font-size: 2em; /* حجم أصغر للهواتف */
                 margin: 20px 0;
             }
 
@@ -159,7 +163,13 @@
             }
 
             .card {
-                width: calc(50% - 10px); /* بطاقتين في الصف على الهواتف */
+                width: 70%; /* بطاقة واحدة في الصف على الهواتف */
+                max-width: 90%;
+                margin-bottom: 15px; /* تباعد بين البطاقات */
+            }
+
+            .card-container {
+                gap: 10px; /* تقليل المسافة بين البطاقات */
             }
 
             @keyframes planet-orbit-mobile {
